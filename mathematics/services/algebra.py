@@ -21,7 +21,5 @@ operations = {
 class AlgebraService:
     @staticmethod
     def calculate(calc: str, a: int, b: int) -> int | float:
-        a = int(a)
-        b = int(b)
         return operations[calc](a, b)
 
