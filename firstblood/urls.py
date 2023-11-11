@@ -17,12 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from mathematics.views import hello
+from mathematics import views
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", hello),
-    path("hello/", hello),
-    path("hello/<name>", hello),
+    path("", views.hello),
+    path("hello/", views.hello),
+    path("hello/<name>", views.hello),
+    path("mathematics/<calc>/<a>/", views.calculate),
+    path("mathematics/<calc>/", views.calculate),
+    path("mathematics/", views.calculate),
+    path("mathematics/<calc>/<a>/<b>", views.calculate),
 ]
